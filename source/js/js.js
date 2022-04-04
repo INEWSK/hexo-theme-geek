@@ -185,10 +185,10 @@ function blogRuntime() {
   if (String(snum).length == 1) {
     snum = "0" + snum;
   }
-  document.getElementById("timeDate").innerHTML =
-    "本博客已運行時間 " + dnum + " 天 ";
-  document.getElementById("times").innerHTML =
-    hnum + " 小時 " + mnum + " 分 " + snum + " 秒";
+  // document.getElementById("timeDate").innerHTML =
+  // "本博客已運行時間 " + dnum + " 天 ";
+  $("#timeDate").html("本博客已運行時間 " + dnum + " 天 ");
+  $('#times').html(hnum + " 小時 " + mnum + " 分 " + snum + " 秒")
 }
 
 // GET DATA FROM LOCALSTORAGE
@@ -203,7 +203,7 @@ if (getCookie("style") == null) {
   updateStyle();
 }
 
-$("#update_style").change(function () {
+$("#update_style").on("change", function () {
   var checked = $("#update_style").is(":checked");
   if (checked) {
     setCookie("style", "black");
@@ -230,6 +230,7 @@ if (typeof pub_date != "undefined") {
 $(function () {
   if (isMobile()) return;
   var $btn = $(".back-to-top-btn");
+  console.log($btn.children("span"))
   $(window).on("scroll", function () {
     // 獲取文檔可滑動的總高度並減去當前視窗高度
     var visibleHeight = $(document).height() - $(window).innerHeight();
@@ -298,7 +299,7 @@ $(async function () {
   });
 });
 
-setInterval("blogRuntime()", 250);
+setInterval("blogRuntime()", 1000);
 
 if (window.console && window.console.log) {
   console.log(
