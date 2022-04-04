@@ -1,3 +1,4 @@
+/// <reference path="../libs/jquery.min.js" />
 var web_style = $("#web_style").val();
 var valine_appId = $("#valine_appid").val();
 var valine_appKey = $("#valine_appKey").val();
@@ -229,17 +230,23 @@ if (typeof pub_date != "undefined") {
 $(function () {
   if (isMobile()) return;
   var $btn = $(".back-to-top-btn");
-  $(document).scroll(function () {
-    if ($(this).scrollTop() < 300) {
+  $(window).on("scroll", function () {
+    // 獲取文檔可滑動的總高度並減去當前視窗高度
+    var visibleHeight = $(document).height() - $(window).innerHeight();
+    // 獲取當前視窗滑動 Y 軸量除去當前用戶視窗高度計出滑動百分比
+    var percent = Math.min(window.scrollY / visibleHeight, 100);
+    $btn.children("span").text(Math.round(percent * 100) + "%");
+  });
+
+  $(document).on("scroll", function () {
+    if ($(this).scrollTop() < 50) {
       $btn.fadeOut();
     } else {
       $btn.fadeIn();
     }
   });
-  // scroll body to top on click
   $btn.on("click", function () {
-    $("html, body").animate(
-      {
+    $("html, body").animate({
         scrollTop: 0,
       },
       800
@@ -282,7 +289,12 @@ $(async function () {
     var sizes = "auto";
 
     $image.addClass("lazyload");
-    $image.attr({ "data-src": src, "data-sizes": sizes }).removeAttr("src");
+    $image
+      .attr({
+        "data-src": src,
+        "data-sizes": sizes,
+      })
+      .removeAttr("src");
   });
 });
 
