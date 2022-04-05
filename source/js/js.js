@@ -258,7 +258,7 @@ $(function () {
 
 // fancybox
 $(function () {
-  $(".posts img")
+  $(".post-content img")
     .not("[hidden]")
     .each(function () {
       var $image = $(this);
