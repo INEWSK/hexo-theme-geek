@@ -165,7 +165,7 @@ function isMobile() {
 // 博客運行時間統計
 function blogRuntime() {
   var now = new Date();
-  var grt = new Date("05/10/2019 18:00:00"); //起始時間 "MM/DD/YYYY"
+  var grt = new Date("05/10/2020 00:00:00"); //起始時間 "MM/DD/YYYY"
   now.setTime(now.getTime() + 250);
   days = (now - grt) / 1000 / 60 / 60 / 24;
   dnum = Math.floor(days);
@@ -187,8 +187,8 @@ function blogRuntime() {
   }
   // document.getElementById("timeDate").innerHTML =
   // "本博客已運行時間 " + dnum + " 天 ";
-  $("#timeDate").html("本博客已運行時間 " + dnum + " 天 ");
-  $('#times').html(hnum + " 小時 " + mnum + " 分 " + snum + " 秒")
+  $("#timeDate").html("本博客已運行 " + dnum + " 天 ");
+  $("#times").html(hnum + " 小時 " + mnum + " 分 " + snum + " 秒");
 }
 
 // GET DATA FROM LOCALSTORAGE
@@ -230,16 +230,12 @@ if (typeof pub_date != "undefined") {
 $(function () {
   if (isMobile()) return;
   var $btn = $(".back-to-top-btn");
-  console.log($btn.children("span"))
   $(window).on("scroll", function () {
     // 獲取文檔可滑動的總高度並減去當前視窗高度
     var visibleHeight = $(document).height() - $(window).innerHeight();
     // 獲取當前視窗滑動 Y 軸量除去當前用戶視窗高度計出滑動百分比
     var percent = Math.min(window.scrollY / visibleHeight, 100);
     $btn.children("span").text(Math.round(percent * 100) + "%");
-  });
-
-  $(document).on("scroll", function () {
     if ($(this).scrollTop() < 50) {
       $btn.fadeOut();
     } else {
@@ -247,7 +243,8 @@ $(function () {
     }
   });
   $btn.on("click", function () {
-    $("html, body").animate({
+    $("html, body").animate(
+      {
         scrollTop: 0,
       },
       800
