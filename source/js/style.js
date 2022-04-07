@@ -16,16 +16,16 @@
         }
     }
 
-    var white = '\
+    var black = '\
     body {\
-        background-color: #fcfcfc;\
-        color: #51525d;\
+        background-color: #3a3e4a;\
+        color: #d2d2d2;\
     }\
     #footer .flink .ba {\
-        color: #51525d\
+        color: #ccc\
     }'
 
-    if (getCookie("style") === "white") {
-        setStyle(white)
+    if (getCookie("style") === "black") {
+        setStyle(black)
     }
 })();

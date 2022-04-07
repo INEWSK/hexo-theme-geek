@@ -214,7 +214,7 @@ function blogRuntime() {
 }
 
 // 文章時間提醒
-if (typeof pub_date != "undefined") {
+if (typeof pub_date === "string") {
   var now = Date.now();
   var interval = parseInt(now - pub_date);
   if (interval >= 3600 * 24 * 90 * 1000) {
