@@ -5,9 +5,9 @@ style: white
 favicon: /favicon.png
 
 menu:
-  存檔: /archives
-  菊苣錄: /links
-  關於: /about
+  存檔: /archives/
+  菊苣錄: /links/
+  關於: /about/
   Github: https://github.com/INEWSK
 
 valine:
