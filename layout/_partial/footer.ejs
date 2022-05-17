@@ -32,3 +32,15 @@
 <%- js('https://cdn.jsdelivr.net/npm/opencc-js@1.0.3/bundle-browser.min.js') %>
 <!-- Live2D Widget -->
 <%- js('https://cdn.jsdelivr.net/gh/INEWSK/live2d-widget@0.9.0/autoload.min.js') %>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics.trackingId %>"></script>
+<script>
+    var host = window.location.hostname;
+    if (host !== "localhost") {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', '<%= theme.google_analytics.trackingId %>');
+    }
+</script>
