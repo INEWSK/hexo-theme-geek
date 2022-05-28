@@ -7,7 +7,7 @@
     function setStyle(style) {
         var head = document.head || document.getElementsByTagName('head')[0];
         var css = document.createElement('style');
-        head.appendChild(css)
+        head.appendChild(css);
         if (css.styleSheet) {
             // This is required for IE8 and below.
             css.styleSheet.cssText = style;

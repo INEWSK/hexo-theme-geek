@@ -8,6 +8,9 @@
     <title>
         <%= page.title ? page.title + " - " + config.title : config.title + " | Time me now wasted" %>
     </title>
+    <!-- preload web font -->
+    <link rel="preload" href="/fonts/zpix.woff" as="font" type="font/woff" crossorigin>
+
     <%- css('libs/highlight/styles/monokai-sublime.css') %>
     <%- css('libs/font-awesome/css/all.min.css') %>
     <%- css('libs/fancybox/jquery.fancybox.min.css') %>
