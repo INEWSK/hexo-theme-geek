@@ -255,26 +255,32 @@ $(function () {
 // fancybox
 $(function () {
   $(".post-content img")
-    .not("[hidden]")
+    .not("[no-fancybox]")
     .each(function () {
       var $image = $(this);
       var alt = $image.attr("title");
       var src = $image.attr("src");
       $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent("a");
-      $imageWrapLink.attr("data-fancybox", "images");
+      $imageWrapLink.attr("data-fancybox", "");
       if (alt) {
         $imageWrapLink.attr("data-caption", alt);
       }
     });
 
-  $().fancybox({
-    selector: '[data-fancybox="images"]',
-    thumbs: false,
-    hash: true,
-    loop: false,
-    fullScreen: false,
-    slideShow: false,
-    protect: true,
+  Fancybox.bind("[data-fancybox]", {
+    Toolbar: {
+      display: [
+        { id: "prev", position: "center" },
+        { id: "counter", position: "center" },
+        { id: "next", position: "center" },
+        "zoom",
+        "slideshow",
+        "fullscreen",
+        "download",
+        "thumbs",
+        "close",
+      ],
+    },
   });
 });
 

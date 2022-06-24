@@ -19,18 +19,20 @@
 <input type="hidden" id="web_style" value="<%= theme.style %>">
 <input type="hidden" id="valine_appid" value="<%= theme.valine.appId %>">
 <input type="hidden" id="valine_appKey" value="<%= theme.valine.appKey %>">
-<%- js('https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js') %>
 <%- js('libs/jquery.min.js') %>
 <%- js('libs/highlight/highlight.pack.js') %>
-<%- js('libs/fancybox/jquery.fancybox.min.js') %>
-<%- js('js/js.js') %>
-<!-- Image Lazy Loader -->
+<!-- Valine -->
+<%- js('https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js') %>
+<!-- Fancybox -->
+<%- js('https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js') %>
+<!-- Images lazyloader -->
 <%- js('https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js') %>
 <!-- OpenCC -->
 <%- js('https://cdn.jsdelivr.net/npm/opencc-js@1.0.3/data.min.js') %>
 <%- js('https://cdn.jsdelivr.net/npm/opencc-js@1.0.3/data.cn2t.min.js') %>
 <%- js('https://cdn.jsdelivr.net/npm/opencc-js@1.0.3/bundle-browser.min.js') %>
-<!-- Live2D Widget -->
+<%- js('js/js.js') %>
+<!-- Live2D widget -->
 <%- js('https://cdn.jsdelivr.net/gh/INEWSK/live2d-widget@0.9.0/autoload.min.js') %>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics.trackingId %>"></script>
