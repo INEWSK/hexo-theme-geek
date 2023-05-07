@@ -1,20 +1,19 @@
 <div class="footer" id="footer">
-    <p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2020 <br> Powered by <a class="flink"
-            href="https://hexo.io">Hexo</a>
-        <i class="fa fa-heart throb" style="color:#d43f57"></i> Theme by
-        <a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek">Geek</a>.
-        <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
-            <input type="checkbox" name="switch" id="update_style">
-            <span class="el-switch-style"></span>
-        </label>
-        <br />
-        <span id="timeDate">加載天數...</span><span id="times">加載時分秒... </span>
-        <span class="yay">(≧&#8711;≦)&#65417;&#9829;</span><br />
-    </p>
+  <p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2020 <br> Powered by <a class="flink" href="https://hexo.io">Hexo</a>
+    <i class="fa fa-heart throb" style="color:#d43f57"></i> Theme by
+    <a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek">Geek</a>.
+    <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
+      <input type="checkbox" name="switch" id="update_style">
+      <span class="el-switch-style"></span>
+    </label>
+    <br />
+    <span id="timeDate">加載天數...</span><span id="times">加載時分秒... </span>
+    <span class="yay">(≧&#8711;≦)&#65417;&#9829;</span><br />
+  </p>
 </div>
 <div class="back-to-top-btn">
-    <i class="fa fa-arrow-up" aria-hidden="true"></i>
-    <span></span>
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+  <span></span>
 </div>
 <input type="hidden" id="web_style" value="<%= theme.style %>">
 <input type="hidden" id="valine_appid" value="<%= theme.valine.appId %>">
@@ -34,15 +33,18 @@
 <%- js('js/js.js') %>
 <!-- Live2D widget -->
 <%- js('https://cdn.jsdelivr.net/gh/INEWSK/live2d-widget@0.9.0/autoload.min.js') %>
-<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics.trackingId %>"></script>
 <script>
-    var host = window.location.hostname;
-    if (host !== "localhost") {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  var host = window.location.hostname;
+  if (host !== "localhost") {
+    window.dataLayer = window.dataLayer || [];
 
-        gtag('config', '<%= theme.google_analytics.trackingId %>');
+    function gtag() {
+      dataLayer.push(arguments);
     }
+    gtag('js', new Date());
+
+    gtag('config', '<%= theme.google_analytics.trackingId %>');
+  }
 </script>
